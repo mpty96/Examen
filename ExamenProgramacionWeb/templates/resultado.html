@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/estilocss.css">
+    <title>Resultados</title>
+</head>
+<body>
+    <h1>{{ ejercicio }}</h1>
+    {% if nombre %}
+        <div class="resultado">
+            <p>Nombre: {{ nombre }}</p>
+            <p>Total sin descuento: ${{ total_sin_descuento }}</p>
+            <p>Total a pagar con descuento: ${{ total_con_descuento }}</p>
+        </div>
+    {% elif mensaje %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Volver al Menú Principal</a>
+</body>
+</html>
